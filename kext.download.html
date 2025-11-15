@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kext.download - Kext Downloading Made Easy</title>
+  <meta name="description" content="Download kexts, OCC, and OCAT tools easily. Your one-stop solution for Hackintosh and macOS customization.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+
+    .liquid-glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      transition: all 0.3s ease;
+    }
+
+    .liquid-glass:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+    }
+
+    .liquid-glass-card {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px 0 rgba(31, 38, 135, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .liquid-glass-card:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px 0 rgba(31, 38, 135, 0.4);
+    }
+
+    .download-btn {
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      padding: 10px 20px;
+    }
+
+    .download-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 600;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .kext-name {
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 0.6s ease-out;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+    <div class="liquid-glass px-8 py-3">
+      <img
+        src="https://amaranth-deliberate-canidae-569.mypinata.cloud/ipfs/bafkreickq3sjwbyopxjok7tqeikwblfqvaqurwuzofz7xa7m3p7qzanjlm"
+        alt="kext.download Logo"
+        class="h-14 md:h-16 drop-shadow-md"
+      />
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center pt-20 pb-16 px-4">
+    <div class="liquid-glass px-8 md:px-12 py-8 md:py-12 max-w-3xl w-full animate-fade-in">
+      <h1 class="hero-title text-center mb-6">Kext Downloading Made Easy</h1>
+      <p class="hero-subtitle text-center">Your trusted source for macOS kexts. Download OCC, OCAT, and many kexts with ease.</p>
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <section class="py-20 px-4">
+    <div class="container mx-auto">
+      <h2 class="section-title text-center mb-16">Essential Downloads</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+        <!-- OpenCore Tool -->
+        <div class="liquid-glass-card p-8 animate-fade-in">
+          <h3 class="kext-name mb-4">OpenCore Package</h3>
+          <p class="text-white/90 mb-6 text-sm leading-relaxed">
+            OpenCore Package - The Base to build a EFI.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between text-sm">
+              <span class="text-white/70">OS:</span>
+              <span class="text-white font-medium">macOS, Windows, Linux</span>
+            </div>
+          </div>
+          <button onclick="window.open('https://github.com/acidanthera/opencorepkg/releases', '_blank')" class="download-btn w-full">
+            <i class="fas fa-download mr-2"></i>Download OpenCore Pkg
+          </button>
+        </div>
+
+        <!-- OCC Tool -->
+        <div class="liquid-glass-card p-8 animate-fade-in" style="animation-delay: 0.1s">
+          <h3 class="kext-name mb-4">OpenCore Configurator (OCC)</h3>
+          <p class="text-white/90 mb-6 text-sm leading-relaxed">
+            Advanced configuration tool for OpenCore bootloader with intuitive GUI and comprehensive features.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between text-sm">
+              <span class="text-white/70">OS:</span>
+              <span class="text-white font-medium">macOS</span>
+            </div>
+          </div>
+          <button onclick="window.open('https://mackie100projects.altervista.org/download/occ/', '_blank')" class="download-btn w-full">
+            <i class="fas fa-download mr-2"></i>Download OCC
+          </button>
+        </div>
+
+        <!-- OCAT Tool -->
+        <div class="liquid-glass-card p-8 animate-fade-in" style="animation-delay: 0.2s">
+          <h3 class="kext-name mb-4">OpenCore Auxiliary Tools (OCAT)</h3>
+          <p class="text-white/90 mb-6 text-sm leading-relaxed">
+            Powerful auxiliary tools for OpenCore maintenance, updates, and configuration management.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between text-sm">
+              <span class="text-white/70">OS:</span>
+              <span class="text-white font-medium">Windows</span>
+            </div>
+          </div>
+          <button onclick="window.open('https://github.com/ic005k/OCAuxiliaryTools/releases/', '_blank')" class="download-btn w-full">
+            <i class="fas fa-download mr-2"></i>Download OCAT
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Kexts Section -->
+  <section class="py-20 px-4 pb-32">
+    <div class="container mx-auto">
+      <h2 class="section-title text-center mb-16">Kexts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
+
+        <div class="liquid-glass-card p-6 animate-fade-in">
+          <h3 class="kext-name mb-4">AirportBrcmFixup</h3>
+          <button onclick="window.open('https://github.com/acidanthera/airportbrcmfixup/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.05s">
+          <h3 class="kext-name mb-4">AppleALC</h3>
+          <button onclick="window.open('https://github.com/acidanthera/AppleALC/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.1s">
+          <h3 class="kext-name mb-4">AsusSMC</h3>
+          <button onclick="window.open('https://github.com/hieplpvip/AsusSMC/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.15s">
+          <h3 class="kext-name mb-4">Ath9kfixup</h3>
+          <button onclick="window.open('https://github.com/chunnann/ATH9KFixup', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.2s">
+          <h3 class="kext-name mb-4">AtherosWifiInjectorKext</h3>
+          <button onclick="window.open('https://www.hackintosh-forum.de/forum/thread/22322-atheros-wifi-injector-kext/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.25s">
+          <h3 class="kext-name mb-4">AtherosE2200Ethernet</h3>
+          <button onclick="window.open('https://github.com/Mieze/AtherosE2200Ethernet/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.3s">
+          <h3 class="kext-name mb-4">BT4LEContiunityFixup</h3>
+          <button onclick="window.open('https://github.com/acidanthera/BT4LEContinuityFixup/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.35s">
+          <h3 class="kext-name mb-4">CPUFriend</h3>
+          <button onclick="window.open('https://github.com/acidanthera/CPUFriend/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.4s">
+          <h3 class="kext-name mb-4">HibernationFixup</h3>
+          <button onclick="window.open('https://github.com/acidanthera/HibernationFixup/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.45s">
+          <h3 class="kext-name mb-4">IntelMausi</h3>
+          <button onclick="window.open('https://github.com/acidanthera/IntelMausi/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.5s">
+          <h3 class="kext-name mb-4">Lilu</h3>
+          <button onclick="window.open('https://github.com/acidanthera/lilu/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.55s">
+          <h3 class="kext-name mb-4">LiluFriend</h3>
+          <button onclick="window.open('https://github.com/PMheart/LiluFriend/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.6s">
+          <h3 class="kext-name mb-4">NightShiftUnlocker</h3>
+          <button onclick="window.open('https://github.com/0xFireWolf/NightShiftUnlocker/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.65s">
+          <h3 class="kext-name mb-4">NoTouchID</h3>
+          <button onclick="window.open('https://github.com/al3xtjames/NoTouchID/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.7s">
+          <h3 class="kext-name mb-4">NoVPAJpeg</h3>
+          <button onclick="window.open('https://github.com/vulgo/NoVPAJpeg/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.75s">
+          <h3 class="kext-name mb-4">NullCPUPowerManagement</h3>
+          <button onclick="window.open('https://www.hackintosh-forum.de/forum/thread/24247-nullcpupowermanagement-kext/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.8s">
+          <h3 class="kext-name mb-4">ACPI-Battery-Driver</h3>
+          <button onclick="window.open('https://bitbucket.org/RehabMan/os-x-acpi-battery-driver/downloads/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.85s">
+          <h3 class="kext-name mb-4">BRCMPatchRAM</h3>
+          <button onclick="window.open('https://github.com/acidanthera/BrcmPatchRAM/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.9s">
+          <h3 class="kext-name mb-4">OSXEapdCodecCommander</h3>
+          <button onclick="window.open('https://bitbucket.org/RehabMan/os-x-eapd-codec-commander/downloads/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 0.95s">
+          <h3 class="kext-name mb-4">FakePCIID</h3>
+          <button onclick="window.open('https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1s">
+          <h3 class="kext-name mb-4">FakeSMC</h3>
+          <button onclick="window.open('https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.05s">
+          <h3 class="kext-name mb-4">GenericUSB3</h3>
+          <button onclick="window.open('https://bitbucket.org/RehabMan/os-x-generic-usb3/downloads/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.1s">
+          <h3 class="kext-name mb-4">IntelNetwork</h3>
+          <button onclick="window.open('https://bitbucket.org/RehabMan/os-x-intel-network/downloads/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.15s">
+          <h3 class="kext-name mb-4">NullEthernet</h3>
+          <button onclick="window.open('https://bitbucket.org/RehabMan/os-x-null-ethernet/downloads/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.2s">
+          <h3 class="kext-name mb-4">USBInjectAll</h3>
+          <button onclick="window.open('https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.25s">
+          <h3 class="kext-name mb-4">RTCMemoryFixup</h3>
+          <button onclick="window.open('https://github.com/acidanthera/RTCMemoryFixup/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.3s">
+          <h3 class="kext-name mb-4">RealtekRTL8111</h3>
+          <button onclick="window.open('https://github.com/Mieze/RTL8111_driver_for_OS_X/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.35s">
+          <h3 class="kext-name mb-4">SinetekRTSX</h3>
+          <button onclick="window.open('https://github.com/cholonam/Sinetek-rtsx/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.4s">
+          <h3 class="kext-name mb-4">SystemProfilerMemoryFixup</h3>
+          <button onclick="window.open('https://www.hackintosh-forum.de/forum/thread/41664-systemprofilermemoryfixup-lilu-kext-plugin/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.45s">
+          <h3 class="kext-name mb-4">TSCAdjustReset</h3>
+          <button onclick="window.open('https://github.com/interferenc/TSCAdjustReset', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.5s">
+          <h3 class="kext-name mb-4">ThunderboltReset</h3>
+          <button onclick="window.open('https://github.com/osy86/ThunderboltReset/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.55s">
+          <h3 class="kext-name mb-4">VirtualSMC</h3>
+          <button onclick="window.open('https://github.com/acidanthera/VirtualSMC/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.6s">
+          <h3 class="kext-name mb-4">VoodooHDA OC</h3>
+          <button onclick="window.open('https://github.com/chris1111/VoodooHDA-OC/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.65s">
+          <h3 class="kext-name mb-4">VoodooI2C</h3>
+          <button onclick="window.open('https://github.com/alexandred/VoodooI2C/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.7s">
+          <h3 class="kext-name mb-4">VoodooInput</h3>
+          <button onclick="window.open('https://github.com/acidanthera/VoodooInput/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.75s">
+          <h3 class="kext-name mb-4">VoodooPS2Controller</h3>
+          <button onclick="window.open('https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.8s">
+          <h3 class="kext-name mb-4">VoodooSDHC</h3>
+          <button onclick="window.open('https://github.com/lvs1974/VoodooSDHCMod/releases/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.85s">
+          <h3 class="kext-name mb-4">VoodooSMBUS</h3>
+          <button onclick="window.open('https://github.com/leo-labs/VoodooSMBus/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.9s">
+          <h3 class="kext-name mb-4">VoodooTSCSync</h3>
+          <button onclick="window.open('http://forge.voodooprojects.org/p/voodootscsync/downloads/7/', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+        <div class="liquid-glass-card p-6 animate-fade-in" style="animation-delay: 1.95s">
+          <h3 class="kext-name mb-4">Whatevergreen</h3>
+          <button onclick="window.open('https://github.com/acidanthera/WhateverGreen/releases', '_blank')" class="download-btn w-full text-sm">
+            Download
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
